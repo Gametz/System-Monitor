@@ -58,6 +58,7 @@ namespace Practic
                         p.Add(name);
                     }
                 }
+                prog.Text = "Кол-во: " + p.Count;
                 Array.Sort(p.ToArray());
                 installed.Items.AddRange(p.ToArray());
             }
