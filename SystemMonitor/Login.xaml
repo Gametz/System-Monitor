@@ -1,0 +1,32 @@
+﻿<Window x:Name="Login" x:Class="SystemMonitor.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemMonitor"
+        mc:Ignorable="d"
+        Title="Login" Height="310" Width="552" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid Background="#FF292929" Cursor="Arrow">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Авторизация" HorizontalAlignment="Center" Margin="0,26,0,0" VerticalAlignment="Top" Width="216" Foreground="White" FontWeight="Bold" FontSize="36" FontFamily="Segoe UI Light" RenderTransformOrigin="0.5,0.5" Height="58">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.183"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0.612"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <PasswordBox x:Name="pass" HorizontalAlignment="Center" Margin="0,184,0,0" VerticalAlignment="Top" Width="210" Height="18" Background="#FF969696" Password="Pass"/>
+            <TextBox x:Name="user" HorizontalAlignment="Center" Margin="0,136,0,0" TextWrapping="Wrap" Text="User" VerticalAlignment="Top" Width="210" Background="#FF969696" TextChanged="TextBox_TextChanged"/>
+            <Button x:Name="loginb" Content="Login" HorizontalAlignment="Center" Margin="0,230,0,0" VerticalAlignment="Top" Width="63" Click="loginb_Click" Height="16" FontSize="9"/>
+            <CheckBox x:Name="skipc" Content="Skip" HorizontalAlignment="Left" Margin="355,230,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" IsChecked="False"/>
+        </Grid>
+
+    </Grid>
+</Window>

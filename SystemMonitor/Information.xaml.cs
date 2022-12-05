@@ -1,21 +1,32 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 using System.Management;
 using System.Management.Instrumentation;
 
-namespace Practic
+namespace SystemMonitor
 {
-    public partial class Form1 : Form
+    /// <summary>
+    /// Логика взаимодействия для MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
     {
+        public MainWindow()
+        {
+            InitializeComponent();
+            
+        }
 
         private static List<string> GetHardwareInfo(string WIN32_Class, string ClassItemField)
         {
@@ -50,15 +61,9 @@ namespace Practic
             }
         }
 
-        private void reload_Click(object sender, EventArgs e)
+        private void Button_Click(object sender, EventArgs e)
         {
-            time.Text = $"Время сеанса: {GetUptime()}";
-            biostime.Text = GetStartUpTime();
-            updtime.Text = $"Время обновления: {DateTime.Now}";
-        }
-
-        private void time_Click(object sender, EventArgs e, string text)
-        {
+            inf.Content = GetInfo();
         }
 
         public static String GetUptime()
@@ -67,7 +72,7 @@ namespace Practic
             return $"{time.Days} дней {time.Hours} часов {time.Minutes} минут {time.Seconds} секунд";
         }
 
-        public static String GetStartUpTime()
+        public static String GetInfo()
         {
             var mo = new ManagementObject(@"\\.\root\cimv2:Win32_OperatingSystem=@");
             return $"ОС: {mo["Caption"]}\n" +
@@ -77,28 +82,20 @@ namespace Practic
                 $"Видеоядро: {String.Join("", GetHardwareInfo("Win32_VideoController", "Name"))} \n" +
                 $"ОЗУ: {Convert.ToInt64(mo["FreePhysicalMemory"]) / 1024} мб / {Convert.ToInt64(mo["TotalVisibleMemorySize"]) / 1024} мб\n" +
                 $"Разрядность: {mo["OSArchitecture"]}\n" +
-                $"Логические диски: {String.Join(" ", Environment.GetLogicalDrives()).TrimEnd(',', ' ').Replace("\\", String.Empty)}";
+                $"Логические диски: {String.Join(" ", Environment.GetLogicalDrives()).TrimEnd(',', ' ').Replace("\\", String.Empty)}\n" +
+                $"Время сеанса: {GetUptime()}\n\n" +
+                $"Время обновления: {DateTime.Now}";
         }
 
-
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
-        private void biostime_Click(object sender, EventArgs e)
-        {
-
-        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
         }
 
-        private void proglist_Click(object sender, EventArgs e)
+        private void proglist_Click(object sender, RoutedEventArgs e)
         {
-            Form form = new Form2();
-            form.Show();
-            this.Hide();
+            Information.Hide();
+            Window plist = new plist();
+            plist.Show();
         }
     }
 }

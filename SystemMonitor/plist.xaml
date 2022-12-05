@@ -1,0 +1,17 @@
+﻿<Window x:Name="proglist" x:Class="SystemMonitor.plist"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemMonitor"
+        mc:Ignorable="d"
+        Title="Program List" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" Width="375" Height="422" SizeToContent="WidthAndHeight">
+    <Grid Background="#FF292929">
+        <Button x:Name="activeb" Content="Запущенные" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="176" ButtonBase.Click="activeb_Click" FontFamily="Segoe UI Light"/>
+        <Button x:Name="installedb" Content="Установленные" HorizontalAlignment="Left" Margin="189,10,0,0" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Light" Click="installedb_Click"/>
+        <Label x:Name="prog" Content="Program" HorizontalAlignment="Left" Margin="10,375,0,0" VerticalAlignment="Top" Width="77" Foreground="White" FontFamily="Segoe UI Light"/>
+        <Button x:Name="reload" Content="Обновить" HorizontalAlignment="Left" Margin="225,379,0,0" VerticalAlignment="Top" Width="66" FontFamily="Segoe UI Light"/>
+        <Button x:Name="close" Content="Назад" HorizontalAlignment="Left" Margin="299,379,0,0" VerticalAlignment="Top" Width="66" FontFamily="Segoe UI Light"/>
+
+    </Grid>
+</Window>

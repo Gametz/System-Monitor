@@ -1,0 +1,28 @@
+﻿<Window x:Name="Information" x:Class="SystemMonitor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemMonitor"
+        mc:Ignorable="d"
+        Title="System Monitor" Height="450" Width="800" WindowStartupLocation="CenterScreen" Loaded="Button_Click" ResizeMode="CanMinimize">
+    <Grid Background="#FF292929" Cursor="Arrow">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Информация о системе" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="382" Foreground="White" FontWeight="Bold" FontSize="36" FontFamily="Segoe UI Light"/>
+        <Label x:Name="inf" Content="inf" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Height="300" Width="456" FontSize="16" FontFamily="Segoe UI Light" Foreground="White"/>
+        <Button x:Name="proglist" Content="Список программ" HorizontalAlignment="Left" Margin="510,365,0,0" VerticalAlignment="Top" Width="125" Background="#FFA2A0A0" Height="28" Foreground="Black" FontFamily="Segoe UI Light" FontSize="14" Click="proglist_Click"/>
+        <Button x:Name="reload" Content="Обновить" Margin="651,365,0,0" VerticalAlignment="Top" Background="#FFA2A0A0" HorizontalAlignment="Left" Width="120" Click="Button_Click" Height="28" FontFamily="Segoe UI Light" FontSize="14"/>
+        <Image Margin="468,77,-8,91" Source="/4703487.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.045"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+    </Grid>
+</Window>
